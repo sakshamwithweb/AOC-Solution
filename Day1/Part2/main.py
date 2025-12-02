@@ -9,7 +9,7 @@ for i in inputs:
     num = int(i[slice(1,len(i))])
     
     if side == "L":
-        for n in range(1,num+1):
+        for n in range(1, num+1):
             sum -= 1
             if sum == 0 and num != n:
                 zeroPoints += 1
