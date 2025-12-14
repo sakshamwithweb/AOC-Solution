@@ -22,10 +22,10 @@ const findLargest = (arr) => {
 }
 
 (async () => {
-    const batteries = await getInput("Day3/input.txt")
-    const largeNumbers = batteries.map((strBattery) => { // strBattery = Each Battery
+    const banks = await getInput("Day3/input.txt")
+    const largestNumbersOfBanks = banks.map((strBank) => { // strBattery = Each Battery
         // try out all possibilities and find the biggest one..
-        const batteryArr = strBattery.split("").map((v) => parseInt(v)) // [5,4,9,1,8,9...]
+        const batteryArr = strBank.split("").map((v) => parseInt(v)) // [5,4,9,1,8,9...]
 
         const possibilities = batteryArr.map((battery, index) => { // Each numbers
             const possibilities = batteryArr.map((b, i) => {
@@ -36,5 +36,5 @@ const findLargest = (arr) => {
         })
         return findLargest(possibilities)
     })
-    console.log(largeNumbers.reduce((prev, a) => prev + a, 0))
+    console.log(largestNumbersOfBanks.reduce((prev, a) => prev + a, 0))
 })()

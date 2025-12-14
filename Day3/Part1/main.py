@@ -1,7 +1,6 @@
 # Answer: 17179
-batteries = open("Day3/input.txt").read().split("\n")
 
-def find_large_numbers(strBattery):
+def find_largest_numbers_of_bank(strBank):
     def find_largest(list):
         largest = 0
         for val in list:
@@ -9,7 +8,7 @@ def find_large_numbers(strBattery):
                 largest = val
         return largest
 
-    battery_list = list(map(int, list(strBattery)))
+    battery_list = list(map(int, list(strBank)))
     possibilities = []
 
     for index, battery in enumerate(battery_list):
@@ -20,5 +19,6 @@ def find_large_numbers(strBattery):
     return find_largest(possibilities)
 
 
-largeNumbers = list(map(find_large_numbers, batteries))
-print(sum(largeNumbers))
+banks = open("Day3/input.txt").read().split("\n")
+largest_numbers_of_bank = list(map(find_largest_numbers_of_bank, banks))
+print(sum(largest_numbers_of_bank))
